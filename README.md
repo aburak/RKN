@@ -19,7 +19,7 @@ biopython
 pandas
 ```
 
-The code uses Pytorch just-in-time (JIT) to compile cpp and cuda extension code. 
+The code uses Pytorch just-in-time (JIT) to compile cpp and cuda extension code.
 Thus, you need to download [CUDA Toolkit 9.0][4] to some `$cuda_dir` and then run
 ```bash
 export CUDA_HOME="$cuda_dir"
@@ -41,7 +41,7 @@ python train_scop.py --pooling max --embedding blosum62 --kmer-size 14 --alterna
 
 ## Train multiclass model on SCOP 1.75 and test on SCOP 2.06
 
-First download [SCOP 1.75 and SCOP 2.06][6] which were downloaded from [DeepSF][7] and preprocessed. 
+First download [SCOP 1.75 and SCOP 2.06][6] which were downloaded from [DeepSF][7] and preprocessed.
 Then unzip them respectively to `./data/SCOP175` and `./data/SCOP206`.
 
 Then run

@@ -21,7 +21,7 @@ from scipy import optimize
 from sklearn.linear_model.base import LinearModel, LinearClassifierMixin
 
 
-class RKNLayer(nn.Module):
+class 	RKNLayer(nn.Module):
     def __init__(self, input_size, hidden_size, kmer_size=1,
                  gap_penalty=0.5, gap_penalty_trainable=False,
                  aggregation=False, la_feature=False,
@@ -181,7 +181,7 @@ class RKNLayer(nn.Module):
                                  self.kmer_size, requires_grad=False)
 
         input = self._conv_layer(input)
-        
+
         lintrans = self._compute_lintrans()
 
         if use_cuda:

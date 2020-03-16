@@ -371,7 +371,7 @@ def rkn_packed_max_lintrans(input, batch_sizes, forget, hx, compute_la=False, ad
         else:
             hh = forget * hx
             hx = torch.max(hh, aux)
-        
+
         if lintrans is not None:
             aux = torch.tensordot(aux, lintrans, dims=[[1], [0]])
             aux = aux.transpose(1, 2)

@@ -16,8 +16,8 @@ import copy
 from timeit import default_timer as timer
 
 
-name = 'SCOP167-fold'
-datadir = '../data/{}'.format(name)
+name = ""
+datadir = ""
 
 
 def load_args():
@@ -343,6 +343,10 @@ class Net(nn.Module):
 
 
 def main():
+	global datadir
+	global name
+	datadir = sys.argv[1] # get the filename from the arguments
+	name = datadir.split("/")[-1]
     args = load_args()
     print(args)
     datasets = SCOPLoader(datadir, maxlen=None)
