@@ -344,7 +344,7 @@ __global__ void forget_rkn_max_cuda_forward_kernel(
         else
             aux = step_input[index] * hidden_low;
         mask_hidden[index] = new_hidden[index] > aux;
-        new_hidden[index] = fmax(new_hidden[index], aux);
+        new_hidden[index] = fmax(new_hidden[index], scalar_t(aux));
 
         if (compute_la) {
             if (additive)
@@ -352,7 +352,7 @@ __global__ void forget_rkn_max_cuda_forward_kernel(
             else
                 aux = hidden_low * step_input[index];
             mask_output[index] = step_output[index] > aux;
-            step_output[index] = fmax(step_output[index], aux);
+            step_output[index] = fmax(step_output[index], scalar_t(aux));
         }
         else {
             step_output[index] = new_hidden[index];
@@ -478,7 +478,7 @@ __global__ void forget_rkn_packed_max_cuda_forward_kernel(
         else
             aux = inputs[global_index] * hidden_low;
         mask_hiddens[global_index] = new_hidden[index] > aux;
-        new_hidden[index] = fmax(new_hidden[index], aux);
+        new_hidden[index] = fmax(new_hidden[index], scalar_t(aux));
         hiddens[global_index] = new_hidden[index];
         if (compute_la) {
             if (additive)
@@ -486,7 +486,7 @@ __global__ void forget_rkn_packed_max_cuda_forward_kernel(
             else
                 aux = hidden_low * inputs[global_index];
             mask_outputs[global_index] = step_output[index] > aux;
-            step_output[index] = fmax(step_output[index], aux);
+            step_output[index] = fmax(step_output[index], scalar_t(aux));
             outputs[global_index] = step_output[index];
         }
         else {
@@ -547,7 +547,7 @@ __global__ void forget_rkn_packed_max_cuda_backward_kernel(
             d_inputs[global_index] += mask_hiddens[global_index] ? 0.0 : hidden_minus1_low * d_hidden[index];
             // d_forget[index] += (hidden_minus1 - inputs[global_index] * hidden_minus1_low) * d_hidden[index];
         }
-        d_forget[index] += mask_hiddens[global_index] ? hidden_minus1 * d_hidden[index] : 0.0; 
+        d_forget[index] += mask_hiddens[global_index] ? hidden_minus1 * d_hidden[index] : 0.0;
 
         if (index % kmer_size != 0)
             if (additive)
@@ -594,7 +594,7 @@ std::vector<at::Tensor> forget_rkn_packed_cuda_forward(
     // int64_t last_batch_size = batch_sizes[0];
     const auto kmer_size = hidden.size(2);
     const auto state_size = hidden.size(1);
-    
+
     const int threads = 512;
     const int block_size = (state_size * kmer_size + threads - 1) / threads;
 
@@ -748,7 +748,7 @@ std::vector<at::Tensor> forget_rkn_cuda_forward(
     const auto kmer_size = hidden.size(2);
     const auto state_size = hidden.size(1);
     const auto batch_size = hidden.size(0);
-    
+
     const int threads = 512;
     const int block_size = (state_size * kmer_size + threads - 1) / threads;
     const dim3 blocks(block_size, batch_size);
@@ -829,7 +829,7 @@ std::vector<at::Tensor> forget_rkn_cuda_backward(
                 i,
                 compute_la,
                 additive);
-            }));    
+            }));
         } else {
             AT_DISPATCH_FLOATING_TYPES(d_hidden.type(), "forget_rkn_backward_cuda", ([&] {
             forget_rkn_cuda_backward_kernel<scalar_t><<<blocks, threads>>>(
@@ -878,7 +878,7 @@ std::vector<at::Tensor> forget_rkn_max_cuda_forward(
     const auto kmer_size = hidden.size(2);
     const auto state_size = hidden.size(1);
     const auto batch_size = hidden.size(0);
-    
+
     const int threads = 512;
     const int block_size = (state_size * kmer_size + threads - 1) / threads;
     const dim3 blocks(block_size, batch_size);
@@ -963,7 +963,7 @@ std::vector<at::Tensor> forget_rkn_max_cuda_backward(
                 i,
                 compute_la,
                 additive);
-            }));    
+            }));
         } else {
             AT_DISPATCH_FLOATING_TYPES(d_hidden.type(), "forget_rkn_max_backward_cuda", ([&] {
             forget_rkn_max_cuda_backward_kernel<scalar_t><<<blocks, threads>>>(
@@ -1014,7 +1014,7 @@ std::vector<at::Tensor> forget_rkn_packed_max_cuda_forward(
 
     const auto kmer_size = hidden.size(2);
     const auto state_size = hidden.size(1);
-    
+
     const int threads = 512;
     const int block_size = (state_size * kmer_size + threads - 1) / threads;
 

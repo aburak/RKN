@@ -12,6 +12,9 @@ out
 __pycache__/
 *.py[cod]
 *$py.class
+*.sbatch
+*.simg
+job.*
 
 # C extensions
 *.so

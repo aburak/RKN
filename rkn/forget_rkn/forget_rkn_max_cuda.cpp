@@ -148,7 +148,7 @@ std::vector<at::Tensor> forget_rkn_packed_max_backward(
   CHECK_INPUT(hiddens);
   CHECK_INPUT(forget);
   if (lintrans.numel() != 0)
-    CHECK_INPUT(lintrans)
+    CHECK_INPUT(lintrans);
   CHECK_INPUT(mask_outputs);
   CHECK_INPUT(mask_hiddens);
 
@@ -173,4 +173,3 @@ PYBIND11_MODULE(TORCH_EXTENSION_NAME, m) {
   m.def("packed_max_forward", &forget_rkn_packed_max_forward, "forget RKN packed forward with max pooling (CUDA)");
   m.def("packed_max_backward", &forget_rkn_packed_max_backward, "forget RKN packed backward  with max pooling(CUDA)");
 }
-
