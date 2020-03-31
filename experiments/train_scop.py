@@ -152,6 +152,16 @@ class Net(nn.Module):
 		self.gap_penalty = args.gap_penalty[0]
 		self.embedding = args.embedding
 		self.embed_layer = BioEmbedding(20, encoding=args.embedding, pooling=args.pooling)
+		'''
+		RKN parameters
+		input_size, n_classes, hidden_sizes, kmer_sizes,
+		gap_penalties=None, gap_penalty_trainable=False,
+		aggregations=None, la_features=None,
+		kernel_funcs=None, kernel_args_list=None,
+		kernel_args_trainable=False, alpha=0., fit_bias=True
+
+		input_size=20 - hidden_size=128 - kmer_size=14
+		'''
 		self.rkn = RKN(
 			20, 1, args.hidden_size, args.kmer_size, args.gap_penalty,
 			args.gap_penalty_trainable, args.aggregation, args.la_feature,

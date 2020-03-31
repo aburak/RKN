@@ -66,6 +66,7 @@ class 	RKNLayer(nn.Module):
 		self.kappa = lambda x: kernel_func(x, *self.kernel_args)
 
 		self._need_lintrans_computed = True
+		# weight is the anchor points?
 		self.weight = nn.Parameter(
 			torch.Tensor(hidden_size, kmer_size, input_size))
 
@@ -77,6 +78,9 @@ class 	RKNLayer(nn.Module):
 		agg_weight /= agg_weight.sum()
 		self.register_buffer("agg_weight", agg_weight)
 
+		# initialization of the parameters is done here. It is randomly chosen values.
+		# In case of gap_penalty=0, they are updated based on the cluster centroids
+		# in unsup_train method.
 		self.reset_parameters()
 		# self.normalize_()
 

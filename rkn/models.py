@@ -54,6 +54,16 @@ class RKNSequential(nn.Module):
             else:
                 kernel_args = kernel_args_list[i]
 
+			'''
+			RKNLayer parameters
+			input_size, hidden_size, kmer_size=1,
+			gap_penalty=0.5, gap_penalty_trainable=False,
+			aggregation=False, la_feature=False,
+			kernel_func="exp", kernel_args=[0.5],
+			kernel_args_trainable=False,
+			additive=False, log_scale=False,
+			pooling='mean', agg_weight=1., unsup=False, pooling_arg=1e-03
+			'''
             rkn_layer = RKNLayer(input_size, hidden_sizes[i], kmer_sizes[i],
                                  gap_penalty, gap_penalty_trainable,
                                  aggregation, la_feature, kernel_func,
@@ -107,6 +117,14 @@ class RKN(nn.Module):
                  kernel_args_trainable=False, alpha=0., fit_bias=True,
                  penalty='l2', **kwargs):
         super(RKN, self).__init__()
+		'''
+		RKNSequential parameters
+		input_size, hidden_sizes, kmer_sizes,
+        gap_penalties=None, gap_penalty_trainable=False,
+        aggregations=None, la_features=None,
+        kernel_funcs=None, kernel_args_list=None,
+        kernel_args_trainable=False, **kwargs
+		'''
         self.rkn_model = RKNSequential(input_size, hidden_sizes, kmer_sizes,
                                        gap_penalties, gap_penalty_trainable,
                                        aggregations, la_features, kernel_funcs,
