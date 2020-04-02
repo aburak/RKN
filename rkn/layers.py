@@ -145,6 +145,7 @@ class 	RKNLayer(nn.Module):
 		if not self.training:
 			self._need_lintrans_computed = False
 			self.lintrans.data = lintrans.data
+		print(type(lintrans))
 		return lintrans
 
 	def _conv_layer(self, given_inp):
