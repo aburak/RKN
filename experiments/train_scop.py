@@ -386,13 +386,17 @@ def main():
 		data_loader = {'train': train_loader, 'val': val_loader, 'init': init_loader}
 
 		model = Net(args)
-		if args.alternating:
-			optimizer = optim.Adam(model.rkn.rkn_model.parameters(), lr=args.lr)
-		else:
-			optimizer = optim.Adam([
-				{'params': model.rkn.rkn_model.parameters()},
-				{'params': model.rkn.classifier.parameters(), 'weight_decay': args.regularization}
-				], lr=args.lr)
+		# if args.alternating:
+		# 	optimizer = optim.Adam(model.rkn.rkn_model.parameters(), lr=args.lr)
+		# else:
+		# 	optimizer = optim.Adam([
+		# 		{'params': model.rkn.rkn_model.parameters()},
+		# 		{'params': model.rkn.classifier.parameters(), 'weight_decay': args.regularization}
+		# 		], lr=args.lr)
+
+		optimizer = optim.Adam([
+			{'params': model.rkn.classifier.parameters(), 'weight_decay': args.regularization}
+			], lr=args.lr)
 		criterion = nn.BCEWithLogitsLoss()
 		lr_scheduler = ReduceLROnPlateau(
 				   optimizer, factor=0.5, patience=5, min_lr=1e-4)

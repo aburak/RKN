@@ -72,8 +72,8 @@ class 	RKNLayer(nn.Module):
 		self.weight = torch.Tensor(hidden_size, kmer_size, input_size)
 
 
-		self.register_buffer("lintrans",
-							 torch.Tensor(hidden_size, hidden_size))
+
+		self.register_buffer("lintrans", torch.Tensor(hidden_size, hidden_size))
 
 		#self.register_buffer("power", 1. / torch.arange(1., self.kmer_size + 1.))
 		agg_weight = agg_weight ** torch.arange(0., kmer_size)
@@ -153,12 +153,13 @@ class 	RKNLayer(nn.Module):
 		output: H x batch_size x hidden_size x kmer_size or
 				all_length x hidden_size x kmer_size
 		"""
+		tmp_weight = self.weight.cuda()
 		if self.kernel_func == 'identity':
-			out = torch.tensordot(given_inp, self.weight, dims=([-1], [-1]))
+			out = torch.tensordot(given_inp, tmp_weight, dims=([-1], [-1]))
 		else:
 			norm = given_inp.norm(dim=-1, keepdim=True)
 			norm = norm.unsqueeze(dim=-1)
-			out = torch.tensordot(given_inp, self.weight, dims=([-1], [-1]))
+			out = torch.tensordot(given_inp, tmp_weight, dims=([-1], [-1]))
 			out = out / norm.clamp(min=EPS)
 			out = norm * self.kappa(out)
 		return out
