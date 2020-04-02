@@ -67,8 +67,10 @@ class 	RKNLayer(nn.Module):
 
 		self._need_lintrans_computed = True
 		# weight is the anchor points?
-		self.weight = nn.Parameter(
-			torch.Tensor(hidden_size, kmer_size, input_size))
+		# self.weight = nn.Parameter(
+		# 	torch.Tensor(hidden_size, kmer_size, input_size))
+		self.weight = torch.Tensor(hidden_size, kmer_size, input_size)
+
 
 		self.register_buffer("lintrans",
 							 torch.Tensor(hidden_size, hidden_size))
