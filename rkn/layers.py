@@ -145,7 +145,7 @@ class 	RKNLayer(nn.Module):
 		if not self.training:
 			self._need_lintrans_computed = False
 			self.lintrans.data = lintrans.data
-		print(type(lintrans))
+		#print(type(lintrans))
 		return lintrans
 
 	def _conv_layer(self, given_inp):
@@ -195,7 +195,7 @@ class 	RKNLayer(nn.Module):
 
 		given_inp = self._conv_layer(given_inp)
 
-		lintrans = self._compute_lintrans()
+		lintrans = self._compute_lintrans().cuda()
 
 		if use_cuda:
 			forget = self.gap_penalty.expand_as(hx).contiguous()

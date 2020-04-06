@@ -11,7 +11,7 @@
 #SBATCH --cpus-per-task=4
 # the job can use and see 4 CPUs (from max 24).
 
-#SBATCH --partition=test
+#SBATCH --partition=day
 # the slurm partition the job is queued to.
 
 #SBATCH --mem-per-cpu=3G
@@ -20,7 +20,7 @@
 #SBATCH --gres=gpu:1
 #the job can use and see 1 GPUs (4 GPUs are available in total on one node)
 
-#SBATCH --time=15:00
+#SBATCH --time=55:00
 # the maximum time the scripts needs to run
 # "minutes:seconds", "hours:minutes:seconds", "days-hours", "days-hours:minutes" and "days-hours:minutes:seconds"
 
@@ -50,7 +50,7 @@ cp -R /home/uenal/rkn/data/SCOP167-fold /scratch/$SLURM_JOB_ID/
 #cnn_minst.py <model save path> <mnist data path>
 ####
 
-singularity exec rkn.simg python3 ~/rkn/experiments/train_scop.py --dataset /scratch/$SLURM_JOB_ID/SCOP167-fold/ --pooling max --embedding blosum62 --kmer-size 14 --sigma 0.4 --tfid 1
+singularity exec rkn.simg python3 ~/rkn/experiments/train_scop.py --dataset /scratch/$SLURM_JOB_ID/SCOP167-fold/ --pooling max --embedding blosum62 --kmer-size 14 --sigma 0.4 --tfid 1 --hidden-size 650
 
 echo DONE!
 
