@@ -1,0 +1,731 @@
+Namespace(agg_weight=2.0, aggregation=False, alternating=False, batch_size=64, dataset='/scratch/256311/SCOP167-fold/', embedding='blosum62', epochs=100, gap_penalty=[0.0], gap_penalty_trainable=False, hidden_size=[1024], kmer_size=[14], la_feature=None, lr=0.05, n_layers=1, n_sampling_patches=300000, outdir='', penalty='l2', pooling='max', pooling_arg=0.001, regularization=0.1, save_logs=False, seed=1, sigma=[0.4], tfid=[1], use_cuda=True)
+tfid: a.102.4
+tensor([0.])
+Training layer 0
+total number of patches: 300000
+torch.Size([300000, 14, 20])
+kmeans++
+Spherical kmeans iter 10, objective value 12.751001358032227
+Spherical kmeans iter 20, objective value 12.75726318359375
+Spherical kmeans iter 30, objective value 12.75910758972168
+Spherical kmeans iter 40, objective value 12.759930610656738
+Spherical kmeans iter 50, objective value 12.760589599609375
+Spherical kmeans iter 60, objective value 12.760910034179688
+Spherical kmeans iter 70, objective value 12.761089324951172
+Epoch 1/100
+----------
+current LR: 0.05
+0.0
+train Loss: 0.6014 Acc: 0.7031 Time: 55.77s
+val Loss: 0.4959 Acc: 0.6806 Time: 5.54s
+
+Epoch 2/100
+----------
+current LR: 0.05
+0.0
+train Loss: 0.4995 Acc: 0.7630 Time: 55.07s
+val Loss: 0.5058 Acc: 0.9195 Time: 5.58s
+
+Epoch 3/100
+----------
+current LR: 0.05
+0.0
+train Loss: 0.4983 Acc: 0.7510 Time: 54.96s
+val Loss: 0.5143 Acc: 0.9211 Time: 5.60s
+
+Epoch 4/100
+----------
+current LR: 0.05
+0.0
+train Loss: 0.4978 Acc: 0.7587 Time: 54.90s
+val Loss: 0.6560 Acc: 0.5535 Time: 5.51s
+
+Epoch 5/100
+----------
+current LR: 0.05
+0.0
+train Loss: 0.5343 Acc: 0.7040 Time: 55.31s
+val Loss: 0.6192 Acc: 0.5837 Time: 5.57s
+
+Epoch 6/100
+----------
+current LR: 0.05
+0.0
+train Loss: 0.5214 Acc: 0.7202 Time: 55.30s
+val Loss: 0.5533 Acc: 0.7145 Time: 5.60s
+
+Epoch 7/100
+----------
+current LR: 0.05
+0.0
+train Loss: 0.5192 Acc: 0.7248 Time: 55.09s
+val Loss: 0.4867 Acc: 0.6864 Time: 5.55s
+
+Epoch 8/100
+----------
+current LR: 0.05
+0.0
+train Loss: 0.5384 Acc: 0.6927 Time: 54.96s
+val Loss: 0.7198 Acc: 0.5890 Time: 5.55s
+
+Epoch 9/100
+----------
+current LR: 0.05
+0.0
+train Loss: 0.5167 Acc: 0.7280 Time: 54.93s
+val Loss: 0.5274 Acc: 0.6377 Time: 5.57s
+
+Epoch 10/100
+----------
+current LR: 0.05
+0.0
+train Loss: 0.5271 Acc: 0.7308 Time: 55.58s
+val Loss: 0.5078 Acc: 0.6658 Time: 5.55s
+
+Epoch 11/100
+----------
+current LR: 0.05
+0.0
+train Loss: 0.5487 Acc: 0.6937 Time: 55.00s
+val Loss: 0.4949 Acc: 0.6822 Time: 5.58s
+
+Epoch 12/100
+----------
+current LR: 0.05
+0.0
+train Loss: 0.4952 Acc: 0.7614 Time: 54.89s
+val Loss: 0.5532 Acc: 0.6880 Time: 5.55s
+
+Epoch 13/100
+----------
+current LR: 0.05
+0.0
+train Loss: 0.5414 Acc: 0.7020 Time: 55.23s
+val Loss: 0.5378 Acc: 0.7405 Time: 5.58s
+
+Epoch 14/100
+----------
+current LR: 0.025
+0.0
+train Loss: 0.4913 Acc: 0.7646 Time: 54.89s
+val Loss: 0.5031 Acc: 0.8919 Time: 5.54s
+
+Epoch 15/100
+----------
+current LR: 0.025
+0.0
+train Loss: 0.4960 Acc: 0.7702 Time: 54.92s
+val Loss: 0.4924 Acc: 0.6886 Time: 5.55s
+
+Epoch 16/100
+----------
+current LR: 0.025
+0.0
+train Loss: 0.4885 Acc: 0.7759 Time: 55.37s
+val Loss: 0.5596 Acc: 0.6261 Time: 5.60s
+
+Epoch 17/100
+----------
+current LR: 0.025
+0.0
+train Loss: 0.4935 Acc: 0.7829 Time: 55.08s
+val Loss: 0.4924 Acc: 0.6939 Time: 5.57s
+
+Epoch 18/100
+----------
+current LR: 0.025
+0.0
+train Loss: 0.4977 Acc: 0.7524 Time: 55.41s
+val Loss: 0.5326 Acc: 0.7526 Time: 5.55s
+
+Epoch 19/100
+----------
+current LR: 0.025
+0.0
+train Loss: 0.5021 Acc: 0.7441 Time: 55.43s
+val Loss: 0.5156 Acc: 0.9280 Time: 5.55s
+
+Epoch 20/100
+----------
+current LR: 0.0125
+0.0
+train Loss: 0.4870 Acc: 0.7718 Time: 54.77s
+val Loss: 0.4933 Acc: 0.7897 Time: 5.57s
+
+Epoch 21/100
+----------
+current LR: 0.0125
+0.0
+train Loss: 0.4867 Acc: 0.7683 Time: 55.32s
+val Loss: 0.4943 Acc: 0.7002 Time: 5.57s
+
+Epoch 22/100
+----------
+current LR: 0.0125
+0.0
+train Loss: 0.4877 Acc: 0.7633 Time: 55.28s
+val Loss: 0.5022 Acc: 0.8776 Time: 5.57s
+
+Epoch 23/100
+----------
+current LR: 0.0125
+0.0
+train Loss: 0.4935 Acc: 0.7660 Time: 55.25s
+val Loss: 0.4930 Acc: 0.8242 Time: 5.63s
+
+Epoch 24/100
+----------
+current LR: 0.0125
+0.0
+train Loss: 0.4956 Acc: 0.7732 Time: 54.90s
+val Loss: 0.4889 Acc: 0.7182 Time: 5.57s
+
+Epoch 25/100
+----------
+current LR: 0.0125
+0.0
+train Loss: 0.4896 Acc: 0.7619 Time: 55.27s
+val Loss: 0.5236 Acc: 0.9073 Time: 5.57s
+
+Epoch 26/100
+----------
+current LR: 0.00625
+0.0
+train Loss: 0.4887 Acc: 0.7852 Time: 55.02s
+val Loss: 0.4900 Acc: 0.7092 Time: 5.62s
+
+Epoch 27/100
+----------
+current LR: 0.00625
+0.0
+train Loss: 0.4845 Acc: 0.7593 Time: 55.18s
+val Loss: 0.4905 Acc: 0.7140 Time: 5.61s
+
+Epoch 28/100
+----------
+current LR: 0.00625
+0.0
+train Loss: 0.4874 Acc: 0.7672 Time: 55.36s
+val Loss: 0.4911 Acc: 0.7272 Time: 5.51s
+
+Epoch 29/100
+----------
+current LR: 0.00625
+0.0
+train Loss: 0.4837 Acc: 0.7605 Time: 54.93s
+val Loss: 0.4971 Acc: 0.6838 Time: 5.55s
+
+Epoch 30/100
+----------
+current LR: 0.00625
+0.0
+train Loss: 0.4875 Acc: 0.7745 Time: 55.01s
+val Loss: 0.4896 Acc: 0.7235 Time: 5.55s
+
+Epoch 31/100
+----------
+current LR: 0.00625
+0.0
+train Loss: 0.4878 Acc: 0.7667 Time: 55.14s
+val Loss: 0.4883 Acc: 0.7225 Time: 5.55s
+
+Epoch 32/100
+----------
+current LR: 0.003125
+0.0
+train Loss: 0.4872 Acc: 0.7579 Time: 55.10s
+val Loss: 0.4910 Acc: 0.7945 Time: 5.54s
+
+Epoch 33/100
+----------
+current LR: 0.003125
+0.0
+train Loss: 0.4849 Acc: 0.7660 Time: 55.59s
+val Loss: 0.4919 Acc: 0.8146 Time: 5.59s
+
+Epoch 34/100
+----------
+current LR: 0.003125
+0.0
+train Loss: 0.4858 Acc: 0.7750 Time: 55.40s
+val Loss: 0.4891 Acc: 0.7129 Time: 5.54s
+
+Epoch 35/100
+----------
+current LR: 0.003125
+0.0
+train Loss: 0.4848 Acc: 0.7662 Time: 55.20s
+val Loss: 0.5004 Acc: 0.6774 Time: 5.52s
+
+Epoch 36/100
+----------
+current LR: 0.003125
+0.0
+train Loss: 0.4849 Acc: 0.7702 Time: 54.83s
+val Loss: 0.4901 Acc: 0.7415 Time: 5.60s
+
+Epoch 37/100
+----------
+current LR: 0.003125
+0.0
+train Loss: 0.4845 Acc: 0.7667 Time: 55.36s
+val Loss: 0.4932 Acc: 0.6912 Time: 5.60s
+
+Epoch 38/100
+----------
+current LR: 0.0015625
+0.0
+train Loss: 0.4841 Acc: 0.7515 Time: 55.16s
+val Loss: 0.4909 Acc: 0.7579 Time: 5.53s
+
+Epoch 39/100
+----------
+current LR: 0.0015625
+0.0
+train Loss: 0.4839 Acc: 0.7573 Time: 55.49s
+val Loss: 0.4930 Acc: 0.7966 Time: 5.63s
+
+Epoch 40/100
+----------
+current LR: 0.0015625
+0.0
+train Loss: 0.4844 Acc: 0.7743 Time: 54.98s
+val Loss: 0.4899 Acc: 0.7256 Time: 5.55s
+
+Epoch 41/100
+----------
+current LR: 0.0015625
+0.0
+train Loss: 0.4841 Acc: 0.7633 Time: 55.26s
+val Loss: 0.4902 Acc: 0.7209 Time: 5.52s
+
+Epoch 42/100
+----------
+current LR: 0.0015625
+0.0
+train Loss: 0.4850 Acc: 0.7538 Time: 54.91s
+val Loss: 0.4893 Acc: 0.7240 Time: 5.55s
+
+Epoch 43/100
+----------
+current LR: 0.0015625
+0.0
+train Loss: 0.4840 Acc: 0.7586 Time: 55.47s
+val Loss: 0.4892 Acc: 0.7209 Time: 5.53s
+
+Epoch 44/100
+----------
+current LR: 0.00078125
+0.0
+train Loss: 0.4828 Acc: 0.7619 Time: 55.27s
+val Loss: 0.4900 Acc: 0.7579 Time: 5.57s
+
+Epoch 45/100
+----------
+current LR: 0.00078125
+0.0
+train Loss: 0.4830 Acc: 0.7499 Time: 55.49s
+val Loss: 0.4911 Acc: 0.7680 Time: 5.58s
+
+Epoch 46/100
+----------
+current LR: 0.00078125
+0.0
+train Loss: 0.4828 Acc: 0.7677 Time: 55.23s
+val Loss: 0.4913 Acc: 0.7108 Time: 5.56s
+
+Epoch 47/100
+----------
+current LR: 0.00078125
+0.0
+train Loss: 0.4838 Acc: 0.7504 Time: 55.38s
+val Loss: 0.4905 Acc: 0.7389 Time: 5.57s
+
+Epoch 48/100
+----------
+current LR: 0.00078125
+0.0
+train Loss: 0.4839 Acc: 0.7610 Time: 55.53s
+val Loss: 0.4908 Acc: 0.7579 Time: 5.57s
+
+Epoch 49/100
+----------
+current LR: 0.00078125
+0.0
+train Loss: 0.4834 Acc: 0.7609 Time: 55.29s
+val Loss: 0.4905 Acc: 0.7209 Time: 5.55s
+
+Epoch 50/100
+----------
+current LR: 0.000390625
+0.0
+train Loss: 0.4830 Acc: 0.7554 Time: 55.55s
+val Loss: 0.4901 Acc: 0.7283 Time: 5.54s
+
+Epoch 51/100
+----------
+current LR: 0.000390625
+0.0
+train Loss: 0.4828 Acc: 0.7564 Time: 55.33s
+val Loss: 0.4903 Acc: 0.7569 Time: 5.58s
+
+Epoch 52/100
+----------
+current LR: 0.000390625
+0.0
+train Loss: 0.4822 Acc: 0.7647 Time: 54.99s
+val Loss: 0.4901 Acc: 0.7378 Time: 5.54s
+
+Epoch 53/100
+----------
+current LR: 0.000390625
+0.0
+train Loss: 0.4829 Acc: 0.7563 Time: 55.32s
+val Loss: 0.4909 Acc: 0.7638 Time: 5.52s
+
+Epoch 54/100
+----------
+current LR: 0.000390625
+0.0
+train Loss: 0.4826 Acc: 0.7490 Time: 55.38s
+val Loss: 0.4915 Acc: 0.7733 Time: 5.58s
+
+Epoch 55/100
+----------
+current LR: 0.000390625
+0.0
+train Loss: 0.4843 Acc: 0.7681 Time: 55.17s
+val Loss: 0.4902 Acc: 0.7225 Time: 5.56s
+
+Epoch 56/100
+----------
+current LR: 0.0001953125
+0.0
+train Loss: 0.4831 Acc: 0.7434 Time: 55.19s
+val Loss: 0.4902 Acc: 0.7489 Time: 5.56s
+
+Epoch 57/100
+----------
+current LR: 0.0001953125
+0.0
+train Loss: 0.4826 Acc: 0.7572 Time: 55.59s
+val Loss: 0.4905 Acc: 0.7579 Time: 5.56s
+
+Epoch 58/100
+----------
+current LR: 0.0001953125
+0.0
+train Loss: 0.4825 Acc: 0.7572 Time: 55.15s
+val Loss: 0.4902 Acc: 0.7516 Time: 5.55s
+
+Epoch 59/100
+----------
+current LR: 0.0001953125
+0.0
+train Loss: 0.4828 Acc: 0.7584 Time: 55.26s
+val Loss: 0.4910 Acc: 0.7696 Time: 5.56s
+
+Epoch 60/100
+----------
+current LR: 0.0001953125
+0.0
+train Loss: 0.4827 Acc: 0.7561 Time: 55.46s
+val Loss: 0.4901 Acc: 0.7436 Time: 5.54s
+
+Epoch 61/100
+----------
+current LR: 0.0001953125
+0.0
+train Loss: 0.4827 Acc: 0.7499 Time: 55.33s
+val Loss: 0.4904 Acc: 0.7542 Time: 5.58s
+
+Epoch 62/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4827 Acc: 0.7587 Time: 55.28s
+val Loss: 0.4904 Acc: 0.7569 Time: 5.57s
+
+Epoch 63/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4825 Acc: 0.7524 Time: 55.01s
+val Loss: 0.4909 Acc: 0.7638 Time: 5.63s
+
+Epoch 64/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4826 Acc: 0.7524 Time: 55.24s
+val Loss: 0.4905 Acc: 0.7579 Time: 5.57s
+
+Epoch 65/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4828 Acc: 0.7662 Time: 55.45s
+val Loss: 0.4901 Acc: 0.7415 Time: 5.58s
+
+Epoch 66/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4826 Acc: 0.7529 Time: 55.46s
+val Loss: 0.4903 Acc: 0.7484 Time: 5.57s
+
+Epoch 67/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4827 Acc: 0.7526 Time: 55.58s
+val Loss: 0.4909 Acc: 0.7664 Time: 5.51s
+
+Epoch 68/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4825 Acc: 0.7536 Time: 55.26s
+val Loss: 0.4905 Acc: 0.7579 Time: 5.55s
+
+Epoch 69/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4828 Acc: 0.7644 Time: 55.33s
+val Loss: 0.4902 Acc: 0.7474 Time: 5.55s
+
+Epoch 70/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4826 Acc: 0.7533 Time: 55.03s
+val Loss: 0.4905 Acc: 0.7574 Time: 5.59s
+
+Epoch 71/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4828 Acc: 0.7554 Time: 55.20s
+val Loss: 0.4905 Acc: 0.7569 Time: 5.58s
+
+Epoch 72/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4825 Acc: 0.7499 Time: 55.39s
+val Loss: 0.4914 Acc: 0.7717 Time: 5.59s
+
+Epoch 73/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4827 Acc: 0.7697 Time: 55.48s
+val Loss: 0.4901 Acc: 0.7389 Time: 5.54s
+
+Epoch 74/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4827 Acc: 0.7497 Time: 55.48s
+val Loss: 0.4903 Acc: 0.7516 Time: 5.61s
+
+Epoch 75/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4827 Acc: 0.7552 Time: 55.12s
+val Loss: 0.4902 Acc: 0.7415 Time: 5.56s
+
+Epoch 76/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4826 Acc: 0.7522 Time: 55.37s
+val Loss: 0.4907 Acc: 0.7601 Time: 5.57s
+
+Epoch 77/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4828 Acc: 0.7568 Time: 55.26s
+val Loss: 0.4907 Acc: 0.7601 Time: 5.56s
+
+Epoch 78/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4824 Acc: 0.7720 Time: 55.14s
+val Loss: 0.4900 Acc: 0.7325 Time: 5.51s
+
+Epoch 79/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4826 Acc: 0.7471 Time: 55.47s
+val Loss: 0.4908 Acc: 0.7617 Time: 5.54s
+
+Epoch 80/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4827 Acc: 0.7549 Time: 55.25s
+val Loss: 0.4907 Acc: 0.7601 Time: 5.57s
+
+Epoch 81/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4829 Acc: 0.7663 Time: 55.24s
+val Loss: 0.4902 Acc: 0.7516 Time: 5.54s
+
+Epoch 82/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4826 Acc: 0.7483 Time: 55.22s
+val Loss: 0.4905 Acc: 0.7579 Time: 5.56s
+
+Epoch 83/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4826 Acc: 0.7612 Time: 55.15s
+val Loss: 0.4902 Acc: 0.7458 Time: 5.58s
+
+Epoch 84/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4826 Acc: 0.7577 Time: 54.77s
+val Loss: 0.4902 Acc: 0.7500 Time: 5.52s
+
+Epoch 85/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4825 Acc: 0.7540 Time: 55.41s
+val Loss: 0.4905 Acc: 0.7579 Time: 5.55s
+
+Epoch 86/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4825 Acc: 0.7542 Time: 55.28s
+val Loss: 0.4907 Acc: 0.7606 Time: 5.56s
+
+Epoch 87/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4826 Acc: 0.7538 Time: 55.00s
+val Loss: 0.4916 Acc: 0.7775 Time: 5.59s
+
+Epoch 88/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4828 Acc: 0.7612 Time: 55.05s
+val Loss: 0.4904 Acc: 0.7564 Time: 5.58s
+
+Epoch 89/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4824 Acc: 0.7462 Time: 55.08s
+val Loss: 0.4913 Acc: 0.7712 Time: 5.60s
+
+Epoch 90/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4830 Acc: 0.7667 Time: 55.41s
+val Loss: 0.4905 Acc: 0.7579 Time: 5.58s
+
+Epoch 91/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4825 Acc: 0.7579 Time: 55.48s
+val Loss: 0.4901 Acc: 0.7383 Time: 5.54s
+
+Epoch 92/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4824 Acc: 0.7503 Time: 54.93s
+val Loss: 0.4912 Acc: 0.7707 Time: 5.53s
+
+Epoch 93/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4828 Acc: 0.7656 Time: 55.13s
+val Loss: 0.4902 Acc: 0.7521 Time: 5.56s
+
+Epoch 94/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4826 Acc: 0.7547 Time: 54.94s
+val Loss: 0.4902 Acc: 0.7463 Time: 5.52s
+
+Epoch 95/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4827 Acc: 0.7607 Time: 55.32s
+val Loss: 0.4901 Acc: 0.7410 Time: 5.56s
+
+Epoch 96/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4825 Acc: 0.7550 Time: 55.25s
+val Loss: 0.4902 Acc: 0.7463 Time: 5.54s
+
+Epoch 97/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4826 Acc: 0.7550 Time: 55.30s
+val Loss: 0.4903 Acc: 0.7495 Time: 5.56s
+
+Epoch 98/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4828 Acc: 0.7527 Time: 55.26s
+val Loss: 0.4907 Acc: 0.7579 Time: 5.57s
+
+Epoch 99/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4825 Acc: 0.7538 Time: 55.02s
+val Loss: 0.4907 Acc: 0.7590 Time: 5.52s
+
+Epoch 100/100
+----------
+current LR: 0.0001
+0.0
+train Loss: 0.4828 Acc: 0.7688 Time: 55.63s
+val Loss: 0.4901 Acc: 0.7309 Time: 5.54s
+
+Best epoch: 7
+Best val Acc: 0.686441
+Best val loss: 0.486687
+                       value
+accuracy            0.111111
+auPRC               0.483415
+auROC               0.923165
+auROC50             0.832500
+log.loss            0.905887
+pearson.p           0.000022
+pearson.r           0.381693
+recall_at_10_fdr    0.125000
+recall_at_5_fdr     0.125000
+spearman.p          0.000040
+spearman.r          0.369989
+train_time        101.993630
+DONE!
