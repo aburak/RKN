@@ -1,4 +1,5 @@
 #< -*- coding: utf-8 -*-
+import os, sys
 import math
 import torch
 from torch import nn
@@ -154,7 +155,9 @@ class 	RKNLayer(nn.Module):
 		output: H x batch_size x hidden_size x kmer_size or
 				all_length x hidden_size x kmer_size
 		"""
+		print("The size of the self.weight: {}".format(sys.getsizeof(self.weight.storage())))
 		tmp_weight = self.weight.cuda()
+		print("The size of the weight: {}".format(sys.getsizeof(tmp_weight.storage())))
 		if self.kernel_func == 'identity':
 			out = torch.tensordot(given_inp, tmp_weight, dims=([-1], [-1]))
 		else:
@@ -196,6 +199,8 @@ class 	RKNLayer(nn.Module):
 		given_inp = self._conv_layer(given_inp)
 
 		lintrans = self._compute_lintrans().cuda()
+
+		print(os.system("nvidia-smi"))
 
 		if use_cuda:
 			forget = self.gap_penalty.expand_as(hx).contiguous()
@@ -339,6 +344,7 @@ class BioEmbedding(nn.Module):
 			weight = self._make_weight()
 		self.register_buffer("weight", weight)
 
+	# one-hot encoding
 	def _make_weight(self):
 		weight = torch.zeros(self.num_embeddings + 1, self.num_embeddings)
 		weight[0] = 1./self.num_embeddings
