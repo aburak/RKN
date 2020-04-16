@@ -278,7 +278,7 @@ class Net(nn.Module):
 		for epoch in range(epochs):
 			print('Epoch {}/{}'.format(epoch + 1, epochs))
 			print('-' * 10)
-			print(os.system("nvidia-smi"))
+			# print(os.system("nvidia-smi"))
 
 			if alternating:
 				self.unsup_train_classifier(data_loader['train'], criterion, use_cuda)
@@ -292,7 +292,7 @@ class Net(nn.Module):
 				print("current LR: {}".format(
 					  optimizer.param_groups[0]['lr']))
 			print(self.rkn.rkn_model[0].gap_penalty.item())
-			print(os.system("nvidia-smi"))
+			# print(os.system("nvidia-smi"))
 
 			for phase in phases:
 				if phase not in data_loader:

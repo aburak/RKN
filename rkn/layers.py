@@ -200,7 +200,7 @@ class 	RKNLayer(nn.Module):
 
 		lintrans = self._compute_lintrans().cuda()
 
-		print(os.system("nvidia-smi"))
+		# print(os.system("nvidia-smi"))
 
 		if use_cuda:
 			forget = self.gap_penalty.expand_as(hx).contiguous()

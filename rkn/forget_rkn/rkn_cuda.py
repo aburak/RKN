@@ -87,7 +87,7 @@ class ForgetRKNPackedMaxPost(torch.autograd.Function):
 	def forward(ctx, inputs, batch_sizes, forget, hidden, compute_la=False, additive=False, lintrans=None):
 		# print(forget_rkn.forward)
 		lintrans = torch.empty(0) if lintrans is None else lintrans
-		print(os.system("nvidia-smi"))
+		# print(os.system("nvidia-smi"))
 		print("Size of the variables:\n inputs: {}\n forget: {}\n hidden: {}\n forget: {}\n".format(sys.getsizeof(inputs.storage()), sys.getsizeof(forget.storage()), sys.getsizeof(hidden.storage()), sys.getsizeof(lintrans.storage())))
 		outputs, output, hiddens, hidden, mask_outputs, mask_hiddens = forget_rkn_max.packed_max_forward(
 			inputs, batch_sizes, forget, hidden, compute_la, additive, lintrans)
