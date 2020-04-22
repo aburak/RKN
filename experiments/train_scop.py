@@ -368,6 +368,8 @@ def main():
 	name = datadir.split("/")[-2]
 	print(args)
 	datasets = SCOPLoader(datadir, maxlen=None)
+	all_auroc = []
+	all_auroc50 = []
 	tfids = datasets.get_ids(args.tfid)
 	for tfid in tfids:
 		torch.manual_seed(args.seed)
@@ -419,7 +421,9 @@ def main():
 		scores = compute_metrics(y_true, y_pred)
 		scores.loc['train_time'] = training_time
 		scores.sort_index(inplace=True)
-		print(scores)
+		# print(scores)
+		all_auroc.append(scores["auROC"])
+		all_auroc50.append(scores["auROC50"])
 
 		if args.save_logs:
 			tfid_outdir = args.outdir + '/{}'.format(tfid)
@@ -435,6 +439,9 @@ def main():
 				tfid_outdir + '/model.pkl')
 		# break
 
+	print("auROC")
+	for i in range(len(all_auroc)):
+		print("{}\t{}\t{}".format(tfids[i], all_auroc[i], all_auroc50[i]))
 
 if __name__ == "__main__":
 	main()
