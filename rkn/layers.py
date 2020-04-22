@@ -155,9 +155,9 @@ class 	RKNLayer(nn.Module):
 		output: H x batch_size x hidden_size x kmer_size or
 				all_length x hidden_size x kmer_size
 		"""
-		print("The size of the self.weight: {}".format(sys.getsizeof(self.weight.storage())))
+		# print("The size of the self.weight: {}".format(sys.getsizeof(self.weight.storage())))
 		tmp_weight = self.weight.cuda()
-		print("The size of the weight: {}".format(sys.getsizeof(tmp_weight.storage())))
+		# print("The size of the weight: {}".format(sys.getsizeof(tmp_weight.storage())))
 		if self.kernel_func == 'identity':
 			out = torch.tensordot(given_inp, tmp_weight, dims=([-1], [-1]))
 		else:

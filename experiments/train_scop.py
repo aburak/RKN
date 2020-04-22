@@ -422,8 +422,8 @@ def main():
 		scores.loc['train_time'] = training_time
 		scores.sort_index(inplace=True)
 		# print(scores)
-		all_auroc.append(scores["auROC"])
-		all_auroc50.append(scores["auROC50"])
+		all_auroc.append(scores.loc["auROC"].value)
+		all_auroc50.append(scores.loc["auROC50"].value)
 
 		if args.save_logs:
 			tfid_outdir = args.outdir + '/{}'.format(tfid)
