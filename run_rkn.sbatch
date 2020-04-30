@@ -50,7 +50,7 @@ cp -R /home/uenal/rkn/data/SCOP167-fold /scratch/$SLURM_JOB_ID/
 #cnn_minst.py <model save path> <mnist data path>
 ####
 
-singularity exec rkn.simg python3 ~/rkn/experiments/train_scop.py --dataset /scratch/$SLURM_JOB_ID/SCOP167-fold/ --pooling max --embedding blosum62 --kmer-size 14 --sigma 0.4 --hidden-size 256 --batch-size 64
+singularity exec rkn.simg python3 ~/rkn/experiments/train_scop.py --dataset /scratch/$SLURM_JOB_ID/SCOP167-fold/ --pooling max --embedding blosum62 --kmer-size 14 --sigma 0.4 --hidden-size 900 --batch-size 64
 
 echo DONE!
 
